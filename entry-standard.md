@@ -16,6 +16,12 @@ Students on the Leaving School course. Typically 18 years old. Not necessarily t
 
 ---
 
+## File format
+
+All entries are `.mdx` files, not `.md`. This is required because entries use JSX elements (inline styles, iframes, layout divs). The filename is the slug: `homebrew.mdx`, `git.mdx`, `the-terminal.mdx`.
+
+---
+
 ## Entry structure
 
 Every entry follows this template, in this order:
@@ -24,10 +30,12 @@ Every entry follows this template, in this order:
 ---
 sidebar_position: [number]
 title: [Entry title — short, plain English]
+hide_title: true
 tags: [tag1, tag2]
+slug: /category/entry-slug
 ---
 
-# [Entry title]
+[Page header — see variants below]
 
 **One sentence.** What is this thing, in the plainest English possible.
 
@@ -54,18 +62,97 @@ Optional section. Only include if there is something that genuinely trips studen
 
 ## Good resources
 
-Two to four curated links. Prefer:
-- Official documentation
-- Short explainer videos (Fireship, official channels)
-- Beginner-friendly written guides
-
-Format: `[Title](url)` — one line per resource with a brief note on what it is.
+Two to four curated links and embedded videos. See format below.
 
 ## Related entries
 
 A short list of linked wiki entries. Use Docusaurus relative links.
 Format: `- [Entry title](./entry-slug)`
 ```
+
+---
+
+## Front matter fields
+
+The full set of front matter fields we use:
+
+```
+---
+sidebar_position: [number]
+title: [Entry title]
+hide_title: true
+tags: [tag1, tag2]
+slug: /category/entry-slug
+---
+```
+
+**`hide_title: true`** — Docusaurus auto-renders the `title` field as an H1 at the top of the page. We suppress this because we render our own H1 in the content (either a styled layout div or a plain markdown heading). This gives us control over layout — particularly the icon placement. Always include `hide_title: true` when using the with-icon header pattern. If you are writing a concept entry with no icon (plain `# Heading`), omit `hide_title` from the front matter entirely, as there is no custom div to replace it.
+
+**`slug`** — always set explicitly. Format: `/category/entry-slug`, e.g. `/tools/homebrew` or `/concepts/the-terminal`.
+
+---
+
+## Page header pattern
+
+There are two variants depending on whether the entry has a brand logo.
+
+### With an icon (tools, platforms — anything with a recognisable brand logo)
+
+Title sits on the left, brand icon sits far right. Include `hide_title: true` in front matter.
+
+```mdx
+<div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem'}}>
+  <h1 style={{margin: 0}}>Entry Title</h1>
+  <img src="LOGO_URL" alt="" style={{height: '56px', width: 'auto'}} />
+</div>
+```
+
+### Without an icon (concepts with no canonical brand logo)
+
+Standard markdown heading. Omit `hide_title` from front matter.
+
+```mdx
+# Entry Title
+```
+
+Do not use a styled div for concept entries that have no logo. Keep it simple.
+
+---
+
+## Finding logos
+
+Prefer official sources: the tool's own website, or its official GitHub repository. Avoid random CDNs or third-party icon aggregators — URLs from those sources break without warning.
+
+If no clean, official logo exists for the concept, omit the logo entirely. Do not use a misleading or generic icon as a substitute.
+
+---
+
+## Good resources section
+
+Two to four curated resources. For links, use this format:
+
+```mdx
+- [Official site](https://example.com) — brief description
+```
+
+For YouTube videos, embed them with an iframe rather than linking out:
+
+```mdx
+**Video title** — brief description:
+
+<iframe
+  width="100%"
+  style={{aspectRatio: '16/9', border: 'none', borderRadius: '8px', marginBottom: '1rem'}}
+  src="https://www.youtube.com/embed/VIDEO_ID"
+  title="Video title"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+/>
+```
+
+Replace `VIDEO_ID` with the 11-character ID from the YouTube URL (e.g. `dQw4w9WgXcQ` from `youtube.com/watch?v=dQw4w9WgXcQ`).
+
+**Finding video IDs** — use WebSearch (not WebFetch) to locate videos. Search Google for the video title. Extract the ID from the `youtube.com/watch?v=VIDEO_ID` URL that appears in the search results. Do not guess IDs.
 
 ---
 
@@ -102,7 +189,7 @@ The `docs/` folder is organised into categories, each a subfolder. The Docusauru
 
 If an entry does not fit neatly into one of these, use the closest match. Do not create new categories unless there are at least three entries that would live there.
 
-Entries that belong in a category go in that subfolder. The filename is the slug: `homebrew.md`, `git.md`, `the-terminal.md`.
+Entries that belong in a category go in that subfolder. The filename is the slug: `homebrew.mdx`, `git.mdx`, `the-terminal.mdx`.
 
 Each category folder should have an `_category_.json` file with a label, e.g.:
 ```json
@@ -131,14 +218,21 @@ Common tags: `tools`, `terminal`, `git`, `javascript`, `python`, `deployment`, `
 
 ## Example entry skeleton
 
-```markdown
+This example uses the with-icon variant, which shows the full pattern including the styled header div and an embedded video.
+
+```mdx
 ---
 sidebar_position: 1
 title: Git
+hide_title: true
 tags: [git, tools, version-control]
+slug: /tools/git
 ---
 
-# Git
+<div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem'}}>
+  <h1 style={{margin: 0}}>Git</h1>
+  <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="" style={{height: '56px', width: 'auto'}} />
+</div>
 
 **Version control for your code.** Git tracks every change you make to a project, so you can go back in time, work with others, and understand what changed and when.
 
@@ -170,7 +264,17 @@ If you see a version number, you are good to go.
 ## Good resources
 
 - [Git official documentation](https://git-scm.com/doc) — the authoritative reference, well-organised
-- [Fireship — Git in 100 seconds](https://www.youtube.com/watch?v=hwP7WQkmECE) — the fastest useful overview
+
+**Git in 100 Seconds** — a fast, visual overview of what Git is and why it exists:
+
+<iframe
+  width="100%"
+  style={{aspectRatio: '16/9', border: 'none', borderRadius: '8px', marginBottom: '1rem'}}
+  src="https://www.youtube.com/embed/hwP7WQkmECE"
+  title="Git in 100 Seconds"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+/>
 
 ## Related entries
 
@@ -180,4 +284,4 @@ If you see a version number, you are good to go.
 
 ---
 
-*This standard is maintained by the Leaving School team. Last updated: 2026-04-16.*
+*This standard is maintained by Jocasta Nu. Last updated: 2026-04-16.*
