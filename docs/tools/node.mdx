@@ -1,0 +1,86 @@
+---
+sidebar_position: 3
+title: Node.js
+tags: [tools, javascript, runtime]
+slug: /tools/node
+---
+
+<div style={{display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem'}}>
+  <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/nodejs.svg" alt="" style={{height: '40px', width: 'auto'}} />
+  <h1 style={{margin: 0}}>Node.js</h1>
+</div>
+
+**JavaScript, but running on your computer instead of in a browser.** Node.js lets you write JavaScript code and run it locally — which means you can build servers, command-line tools, and entire applications without needing a browser at all.
+
+## Why it matters on this course
+
+This course uses JavaScript. In the early days you will run JS in the browser, but as soon as you start building real projects — running code locally, installing packages, working with frameworks — you will need Node.
+
+Node also comes with **npm** (Node Package Manager), which is how you install open-source code that other developers have written. Most of the tools and libraries you use throughout the course are installed via npm. It is the engine behind almost every modern JavaScript project.
+
+## How it works (in plain terms)
+
+Normally, JavaScript only runs inside a web browser (Chrome, Firefox, Safari). The browser has a built-in engine that reads your JS files and executes them.
+
+Node.js takes that same engine (it uses Google's V8 engine, the one inside Chrome) and runs it directly on your computer, outside any browser. This means your JavaScript code can now do things browsers cannot — like read and write files, talk to databases, and run a web server.
+
+When you run a JavaScript file with Node, you type something like:
+
+```bash
+node my-script.js
+```
+
+And Node executes it, right there in the terminal.
+
+**npm** is bundled with Node and gives you access to millions of open-source packages. When a project has a `package.json` file, running `npm install` downloads all the packages that project depends on — like fetching all the ingredients before you cook.
+
+## Getting started
+
+Install Node.js using [Homebrew](./homebrew):
+
+```bash
+brew install node
+```
+
+Once installed, check both Node and npm are working:
+
+```bash
+node --version
+npm --version
+```
+
+You should see version numbers for both. If you do, you are set.
+
+To test that Node works, try running a quick piece of JavaScript from the terminal:
+
+```bash
+node -e "console.log('Node is working')"
+```
+
+You should see `Node is working` printed back at you.
+
+## Watch-outs
+
+- **Node and npm are separate things, but come together.** Installing Node installs npm too. You do not need to install npm separately.
+- **Version numbers can matter.** Some projects need a specific version of Node to work properly. You might hear people mention `nvm` (Node Version Manager), which lets you switch between versions. You do not need this right away — just keep your Node version reasonably up to date with Homebrew (`brew upgrade node`) and you will be fine.
+- **`node_modules` folders are huge.** When you run `npm install`, a `node_modules` folder appears with all the downloaded packages. Do not copy or commit this folder — it can be hundreds of megabytes. You will learn to use `.gitignore` to exclude it.
+
+## Good resources
+
+- [nodejs.org](https://nodejs.org) — official Node.js site, with download links and documentation
+- **Node.js in 100 Seconds** — Fireship's quick explainer on what Node is and why it exists:
+
+<iframe
+  width="100%"
+  style={{aspectRatio: '16/9', border: 'none', borderRadius: '8px', marginBottom: '1rem'}}
+  src="https://www.youtube.com/embed/ENrzD9HAZK4"
+  title="Node.js in 100 Seconds — Fireship"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+/>
+
+## Related entries
+
+- [Homebrew](./homebrew)
+- [Git](./git)
+- [The Terminal](../concepts/the-terminal)

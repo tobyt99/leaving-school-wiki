@@ -1,0 +1,81 @@
+---
+sidebar_position: 2
+title: Git
+tags: [tools, version-control, terminal]
+slug: /tools/git
+---
+
+<div style={{display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem'}}>
+  <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="" style={{height: '40px', width: 'auto'}} />
+  <h1 style={{margin: 0}}>Git</h1>
+</div>
+
+**A tool that tracks every change you make to your code.** Git is like a save system for your project — you can take snapshots of your work at any point, go back to an earlier version if something breaks, and collaborate with other people without overwriting each other's changes.
+
+## Why it matters on this course
+
+Git is the industry standard for version control. Every professional developer uses it, and every company expects you to know it. You will use Git throughout the course to save your progress, submit work, and eventually collaborate on shared codebases.
+
+Learning Git early means you will never lose hours of work to an accidental deletion or a change that broke everything — because you will always be able to go back.
+
+## How it works (in plain terms)
+
+Git tracks the history of a **repository** — the folder that contains your project. Every time you want to save a snapshot of your work, you make a **commit**. A commit is like a named checkpoint: "added login page", "fixed the broken button", "finished chapter 3".
+
+You can have multiple lines of development running in parallel using **branches**. Imagine you want to try a new feature without risking your working code — you create a branch, experiment on it, and only merge it back in when you are happy. If it goes wrong, you just delete the branch. Your original code is untouched.
+
+The key concepts at a glance:
+
+- **Repository (repo)** — the project folder that Git is tracking
+- **Commit** — a saved snapshot of your code at a moment in time
+- **Branch** — a parallel version of your code you can work on independently
+- **Merge** — combining one branch back into another
+
+You do not need to understand all of this on day one. The basic loop — make changes, add them, commit them — is enough to start.
+
+## Getting started
+
+First, check if Git is already installed on your Mac:
+
+```bash
+git --version
+```
+
+If you see a version number (like `git version 2.39.0`), you are good. If not, install it with [Homebrew](./homebrew):
+
+```bash
+brew install git
+```
+
+Then tell Git who you are — this gets stamped on every commit you make:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+
+## Watch-outs
+
+- **Git is not the same as GitHub.** Git is the tool that runs on your computer. GitHub is a website where you can store and share your repositories online. They work together, but they are separate things.
+- **You have to explicitly tell Git what to save.** Changes do not get committed automatically. You add them (`git add`) and then commit them (`git commit`). This feels annoying at first but gives you precise control.
+- **Commit messages matter.** Writing "stuff" or "changes" as your commit message will make future-you very confused. Write something brief but meaningful: "add nav bar" or "fix typo in hero text".
+
+## Good resources
+
+- [git-scm.com](https://git-scm.com) — the official Git website, with full documentation and downloads
+- **Git Explained in 100 Seconds** — Fireship's fast, clear overview of what Git is and how it works:
+
+<iframe
+  width="100%"
+  style={{aspectRatio: '16/9', border: 'none', borderRadius: '8px', marginBottom: '1rem'}}
+  src="https://www.youtube.com/embed/hwP7WQkmECE"
+  title="Git Explained in 100 Seconds — Fireship"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+/>
+
+## Related entries
+
+- [The Terminal](../concepts/the-terminal)
+- [Node.js](./node)
+- [GitHub](../platforms/github)

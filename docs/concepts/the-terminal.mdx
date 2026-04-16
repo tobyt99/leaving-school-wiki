@@ -1,0 +1,79 @@
+---
+sidebar_position: 1
+title: The Terminal
+tags: [concepts, terminal, command-line]
+slug: /concepts/the-terminal
+---
+
+# The Terminal
+
+**A text window where you control your computer by typing commands.** Instead of clicking icons and menus, you type instructions directly and the computer responds — instantly, precisely, and without any hand-holding.
+
+## Why it matters on this course
+
+You will use the terminal every single day. Installing tools, running code, saving your work with Git — almost everything on this course happens through it. The sooner it feels normal, the easier everything else becomes.
+
+The good news: you do not need to memorise hundreds of commands. You will learn maybe ten or fifteen to start with, and that covers most of what you will ever need as a beginner.
+
+## How it works (in plain terms)
+
+Think of the terminal as a very direct conversation with your computer. You type a command, press Enter, and the computer does it — no confirmation screens, no "are you sure?" popups (usually). It just acts.
+
+Every command follows roughly the same pattern:
+
+```
+the-command  what-to-act-on  optional-extras
+```
+
+For example:
+
+```bash
+mkdir my-project
+```
+
+That tells the computer: "make a new folder called my-project." `mkdir` is the command, `my-project` is what it acts on.
+
+The terminal shows you where you are on your computer — your current folder — at all times. This is called the **working directory**. Most beginner mistakes happen from being in the wrong folder, so always check where you are with `pwd` (print working directory).
+
+## Getting started
+
+On a Mac, the terminal is already installed. To open it:
+
+1. Press **Cmd + Space** to open Spotlight
+2. Type **Terminal** and press Enter
+
+That is it. A dark window will appear with a blinking cursor. You are ready.
+
+Try your first command — ask the computer where you are:
+
+```bash
+pwd
+```
+
+You should see something like `/Users/yourname`. That is your home folder.
+
+## Watch-outs
+
+- **Typos matter a lot.** The terminal does not guess what you meant. `mkdir` works; `mkdr` does nothing. If a command is not working, check your spelling first.
+- **It looks scarier than it is.** A wall of text after a command is usually fine — it is just the computer telling you what it did. Red text or the word "error" means something went wrong.
+- **You cannot always undo.** Unlike dragging a file to the Bin, some terminal commands (like deleting files) are permanent. You will learn which ones to be careful with as you go.
+- **Capital letters matter.** `Documents` and `documents` are different folder names on a Mac.
+
+## Good resources
+
+- [Apple's Terminal User Guide](https://support.apple.com/guide/terminal/welcome/mac) — official Apple docs, good for reference
+- **Bash in 100 Seconds** — Fireship's quick intro to the shell and how it all fits together:
+
+<iframe
+  width="100%"
+  style={{aspectRatio: '16/9', border: 'none', borderRadius: '8px', marginBottom: '1rem'}}
+  src="https://www.youtube.com/embed/I4ERC7fKU8A"
+  title="Bash in 100 Seconds — Fireship"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+/>
+
+## Related entries
+
+- [Homebrew](../tools/homebrew)
+- [Git](../tools/git)
