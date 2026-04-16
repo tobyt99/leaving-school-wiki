@@ -77,22 +77,10 @@ const config = {
         logo: {
           alt: 'Leaving School',
           src: 'img/LS_logo_square.webp',
+          href: '/',
           style: { height: '32px', width: '32px' },
         },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'wikiSidebar',
-            position: 'left',
-            label: 'Reference',
-          },
-          // GitHub link placeholder — add once repo is created
-          // {
-          //   href: 'https://github.com/your-org/wiki',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
-        ],
+        items: [],
       },
       footer: {
         style: 'dark',
