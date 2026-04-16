@@ -11,8 +11,6 @@ You do not need to read this front to back. Think of it more like a dictionary y
 
 ## How to use it
 
-**Search** is your fastest route. Hit the search bar (top right on desktop, the magnifying glass on mobile) and type whatever you are looking for. It searches titles and content.
-
 **Browse** using the sidebar on the left. Entries are grouped into four categories:
 - **Tools** — software you install and use (Homebrew, VS Code, Git)
 - **Concepts** — ideas and mental models (version control, the terminal, APIs)

@@ -61,11 +61,11 @@ const config = {
         respectPrefersColorScheme: false,
       },
       navbar: {
-        title: '',
+        title: 'Leaving School Wiki',
         logo: {
           alt: 'Leaving School',
-          src: 'img/logo.webp',
-          style: { height: '28px', width: 'auto' },
+          src: 'img/LS_logo_square.webp',
+          style: { height: '32px', width: '32px' },
         },
         items: [
           {
