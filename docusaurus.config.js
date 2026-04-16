@@ -28,7 +28,7 @@ const config = {
 
   stylesheets: [
     {
-      href: 'https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&display=swap',
+      href: 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap',
       type: 'text/css',
     },
   ],
@@ -61,10 +61,11 @@ const config = {
         respectPrefersColorScheme: false,
       },
       navbar: {
-        title: 'Leaving School Wiki',
+        title: '',
         logo: {
-          alt: 'Leaving School Logo',
-          src: 'img/logo.svg',
+          alt: 'Leaving School',
+          src: 'img/logo.webp',
+          style: { height: '28px', width: 'auto' },
         },
         items: [
           {

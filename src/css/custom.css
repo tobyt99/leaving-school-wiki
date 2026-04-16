@@ -300,3 +300,37 @@ pre code {
   border-color: rgba(196, 154, 60, 0.5);
   box-shadow: none;
 }
+
+/* ─── Force brand link colour overrides ─────────────────────────────────────── */
+
+/* TOC right-hand panel */
+.table-of-contents__link {
+  color: var(--ifm-color-content-secondary);
+}
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+  color: #C49A3C;
+  font-weight: 500;
+}
+
+/* Sidebar active */
+.menu__link--active,
+.menu__link--active:hover {
+  color: #C49A3C;
+}
+
+/* Inline links in content */
+.markdown a,
+article a {
+  color: #C49A3C;
+}
+.markdown a:hover,
+article a:hover {
+  color: #A47F30;
+  text-decoration: underline;
+}
+
+/* Breadcrumb active */
+.breadcrumbs__item--active .breadcrumbs__link {
+  color: #C49A3C;
+}
