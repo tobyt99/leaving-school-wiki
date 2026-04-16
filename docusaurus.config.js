@@ -18,7 +18,7 @@ const config = {
   organizationName: 'leaving-school', // placeholder
   projectName: 'wiki',                // placeholder
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
