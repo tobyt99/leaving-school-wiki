@@ -77,7 +77,7 @@ const config = {
         logo: {
           alt: 'Leaving School',
           src: 'img/LS_logo_square.webp',
-          href: '/',
+          href: '/docs/intro',
           style: { height: '32px', width: '32px' },
         },
         items: [],
