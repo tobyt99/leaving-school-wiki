@@ -34,7 +34,7 @@ Custom domain: `wiki.leaving.school` — configured in the Cloudflare Pages proj
 
 ## Adding content
 
-Docs live in the `docs/` folder. Each `.md` file becomes a wiki entry. Subfolders become sidebar categories.
+Docs live in the `docs/` folder. Each `.mdx` file becomes a wiki entry. Subfolders become sidebar categories. All entries use `.mdx` (not `.md`) because they include JSX layout elements — see `entry-standard.md`.
 
 Entry format is defined in [`entry-standard.md`](./entry-standard.md) at the root of this project.
 
