@@ -1,0 +1,59 @@
+---
+sidebar_position: 2
+title: MCP (Model Context Protocol)
+tags: [concepts, ai, protocols]
+slug: /concepts/mcp
+---
+
+# MCP (Model Context Protocol)
+
+**A standard that lets AI assistants connect to external software.** MCP gives AI tools a single, consistent way to talk to services like Google Drive, GitHub, or a project management tool — without anyone having to build a custom connection each time.
+
+## Why it matters on this course
+
+As you start building with AI, you will run into the question: how does an AI assistant actually get data from the real world? How does it read your files, check your calendar, or create a task in Notion? MCP is the answer. Understanding it helps you see how modern AI-powered tools are built — and gives you a mental model for the integrations you will wire up yourself.
+
+## How it works (in plain terms)
+
+MCP stands for Model Context Protocol. Anthropic (the company behind Claude) created it as an open standard, which means anyone can use or build with it.
+
+Here is the core idea. An AI assistant on its own only knows what you type into it. If you want it to reach out to another service — say, read a file from Google Drive — something has to bridge that gap. That bridge is an MCP server.
+
+An MCP server is a small piece of software that sits between the AI and the external service. The AI asks for something using the standard MCP language. The MCP server handles the actual connection to the real service and brings back the result. The AI never has to know how Google Drive works internally — it just asks, and the server figures it out.
+
+The best analogy is USB. Before USB, every device had a different plug and every computer had to have a specific port for each one. After USB, one standard connector worked for almost everything. MCP does the same thing for AI integrations: one protocol, any service.
+
+This matters for you as a builder because it means the integrations you write — or use — are reusable. If a service has an MCP server, any MCP-compatible AI assistant can use it.
+
+## Getting started
+
+You do not need to install anything to understand MCP. When you start building AI-powered apps in the course, you will encounter it naturally.
+
+The best first step is reading the official introduction:
+
+- [Model Context Protocol — Introduction](https://modelcontextprotocol.io/introduction)
+
+## Watch-outs
+
+- MCP is a protocol, not a tool you install once. Each service you want to connect to needs its own MCP server — though many popular ones already exist.
+- "MCP server" sounds advanced. In practice, it is often just a small script or package you run locally or on a server. You do not need to write one from scratch to use MCP.
+
+## Good resources
+
+- [Official MCP documentation](https://modelcontextprotocol.io) — the authoritative reference, covers the spec and how to build with it
+- [Anthropic's original MCP announcement](https://www.anthropic.com/news/model-context-protocol) — a short read that explains why MCP exists and what problem it solves
+
+**Model Context Protocol (MCP) Explained in Under 10 Minutes** — a clear walkthrough of what MCP is and how it works in practice:
+
+<iframe
+  width="100%"
+  style={{aspectRatio: '16/9', border: 'none', borderRadius: '8px', marginBottom: '1rem'}}
+  src="https://www.youtube.com/embed/54HI0bnNopA"
+  title="Model Context Protocol (MCP) Explained in Under 10 Minutes"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+/>
+
+## Related entries
+
+- [The Terminal](./the-terminal)
